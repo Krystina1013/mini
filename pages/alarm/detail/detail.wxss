@@ -1,0 +1,128 @@
+page{
+  background: #f4f4f4;
+  padding: 0 20rpx;
+}
+.btn{
+  width: 654rpx;
+  height: 104rpx;
+  background: #4BB082;
+  border-radius: 52rpx;
+  color: #fff;
+  line-height: 104rpx;
+  position: fixed;
+  bottom: 30rpx;
+  left: 50%;
+  margin-left: -327rpx;
+}
+.empty{
+  height: 120rpx;
+}
+.remark{
+  color: #969799;
+  margin-top: 20rpx;
+}
+.fk-img-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 210rpx);
+  grid-template-rows: repeat(3, 210rpx);
+  grid-row-gap: 20rpx;
+  grid-column-gap: 10rpx;
+  height: 475rpx;
+  /* grid-template-columns: repeat(3, 1fr); */
+}
+.imglist{
+  width:100%;
+  border:1px solid #d8d8d8;
+}
+.imglist image{
+  width: 100%;
+  height: 100%;
+}
+.audio-ele{
+  display: none;
+}
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+.click-btn{
+  padding:8rpx 16rpx;
+  background: #4BB082;
+  border-radius: 8rpx;
+  color: #fff;
+  margin-left:10rpx;
+}
+.word-con{
+  flex: 1 1 auto;
+}
+.two-img{
+  display: flex;
+  justify-content: space-around;
+  margin-top:20rpx;
+
+}
+.two-one-img{
+  width: 358rpx;
+  height: 392rpx;
+  padding:20rpx;
+  background:#fff;
+  border-radius: 8rpx;
+}
+.two-one-img image{
+  width: 310rpx;
+  height: 310rpx;
+  border: 1px solid #f4f4f4;
+  border-radius: 8rpx;
+}
+.img-title{
+  text-align: center;
+  color:#333;
+  font-size: 28rpx;
+}
+.one-img{
+  background: #fff;
+  margin:14rpx 0;
+  padding: 8px;
+  text-align: center;
+  border-radius: 8rpx;
+}
+.one-img image{
+  width: 100%;
+  border: 1px solid #f4f4f4;
+  border-radius: 8rpx;
+}
+.alarm-one{
+  padding: 0 34rpx;
+  background: #fff;
+  line-height: 88rpx;
+  margin-bottom: 18rpx;
+  display:flex;
+  justify-content: space-between;
+}
+.alarm-one .title{
+  color: #000000;
+  font-size: 24rpx;
+}
+.alarm-one .value{
+  color: #000000;
+  font-size: 28rpx;
+  font-weight: 700;
+}
+.alarm-content {
+  padding: 0 34rpx;
+  background: #fff;
+  /* line-height: 44px; */
+  margin-bottom: 18rpx;
+  color:#000;
+  font-size: 28rpx;
+}
+.alarm-content .title{
+  line-height: 72rpx;
+}
+.alarm-content .value{
+  line-height: 48rpx;
+  padding-bottom:14rpx;
+}

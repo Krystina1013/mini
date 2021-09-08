@@ -1,0 +1,423 @@
+/**index.wxss**/
+page {
+  background: #fff;
+}
+
+.bg-top {
+  width: 100%;
+  height: 210rpx;
+  background: #0e5aff;
+  border-radius: 0rpx 0rpx 40rpx 40rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.swiper-con {
+  padding: 0 20rpx;
+}
+
+.swiper {
+  width: 100%;
+  padding: 0 20rpx;
+  box-shadow: 0px 4px 8px 0px rgba(28, 50, 72, 0.20);
+}
+
+.content {
+  margin-top: 50rpx;
+  padding-bottom: 20rpx;
+}
+
+.grid-item {
+  font-size: 28rpx;
+  color: #494d5b;
+}
+
+.item_view {
+  margin-top: 12rpx;
+  margin-bottom: 40rpx;
+  position: relative;
+  text-align: center;
+}
+
+.item_view img {
+  display: block;
+}
+
+.van-grid-item {
+  border-radius: 5px;
+}
+
+.grid-item image {
+  width: 108rpx;
+  height: 108rpx;
+  border-radius: 10rpx;
+  margin-bottom: 16rpx;
+}
+
+.grid-item text {
+  color: #494d5b;
+  font-size: 28rpx;
+  margin-top: 0;
+}
+
+.schoolg-name {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #363636;
+  line-height: 44rpx;
+  text-align: center;
+  margin-top: 22rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dot {
+  position: absolute;
+  width: 35rpx;
+  height: 35rpx;
+  background: #EF5F5F;
+  color: #fff;
+  font-size: 20rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 35rpx;
+  top: -5rpx;
+  right: -10rpx;
+}
+
+.swiper {
+  text-align: center;
+  padding: 0;
+}
+
+.van-grid-item__content {
+  padding: 0rpx !important;
+}
+
+.margin-10 {
+  width: 100%;
+  height: 20rpx;
+  background: #f7f8ff;
+}
+
+.news-con,
+.data-con,
+.alarm-con {
+  padding: 0rpx 20rpx 36rpx;
+}
+
+.title {
+  color: #1f1f1f;
+  font-weight: 700;
+  font-size: 32rpx;
+  line-height: 44rpx;
+  padding: 36rpx 16rpx 16rpx;
+  border-bottom: 2rpx solid #f2f5ff;
+}
+
+.news-con .one-list {
+  padding: 36rpx 20rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2rpx solid #f2f5ff;
+}
+
+.one-list .left {
+  width: calc(100vw - 345rpx);
+  height: 160rpx;
+  margin-right: 24rpx;
+}
+
+.one-list .left_long {
+  width: calc(100vw - 80rpx);
+  height: 160rpx;
+}
+
+.one-list .right {
+  width: 240rpx;
+  height: 160rpx;
+}
+
+.one-list .right_no {
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.new-title {
+  width: 100%;
+  color: #1f1f1f;
+  font-weight: 700;
+  font-size: 32rpx;
+  line-height: 44rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.new-content {
+  width: 100%;
+  font-size: 24rpx !important;
+  height: 68rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  color: #383d57;
+  line-height: 34rpx;
+  margin-top: 6rpx;
+}
+
+.new-time {
+  height: 44rpx;
+  font-weight: 400;
+  font-size: 24rpx;
+  margin-top: 4rpx;
+  color: #a2a5be;
+}
+
+.right_no .new-image {
+  width: 0rpx;
+  height: 0rpx;
+  border: none;
+}
+
+.new-image {
+  width: 236rpx;
+  height: 156rpx;
+  border: 2rpx solid #e5eeff;
+}
+
+.bottom {
+  text-align: center;
+  padding: 24rpx 0 0rpx;
+}
+
+.more-view {
+  width: 170rxp;
+  height: 48rpx;
+  line-height: 48rpx;
+  font-weight: 400;
+  font-size: 28rpx;
+  color: #1f1f1f;
+}
+
+.data-chart {
+  margin: 0 20rpx;
+  padding: 66rpx 52rpx 76rpx;
+  border-bottom: 2rpx solid #f2f5ff;
+}
+
+.data-chart .chart {
+  padding-right: 60rpx;
+  border-right: 2rpx solid #f2f5ff;
+}
+
+.data-chart .tool {
+  padding-left: 56rpx;
+}
+
+.muscle {
+  position: relative;
+  width: 266rpx;
+  height: 266rpx;
+  border-radius: 133rpx;
+  background-color: #e5eeff;
+  z-index: 10;
+}
+
+.sxj {
+  background-color: #cef0d5;
+}
+
+.mj {
+  background-color: #d9efee;
+}
+
+.sx1 {
+  position: absolute;
+  width: 266rpx;
+  height: 266rpx;
+  transform: rotate(0deg);
+  clip: rect(0rpx, 133rpx, 266rpx, 0rpx);
+  /*这个clip属性用来绘制半圆，在clip的rect范围内的内容显示出来，使用clip属性，元素必须是absolute的 */
+  border-radius: 133rpx;
+  background-color: #85abff;
+}
+
+.sxj .sx1 {
+  background-color: #5FCB9D;
+}
+
+.mj .sx1 {
+  background-color: #6DDCD5;
+}
+
+.sx2 {
+  position: absolute;
+  width: 266rpx;
+  height: 266rpx;
+  transform: rotate(0deg);
+  clip: rect(0rpx, 133rpx, 266rpx, 0rpx);
+  border-radius: 133rpx;
+  background-color: #85abff;
+}
+
+.sxj .sx2 {
+  background-color: #5FCB9D;
+}
+
+.mj .sx2 {
+  background-color: #6DDCD5;
+}
+
+.pre {
+  position: absolute;
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 90rpx;
+  background-color: #fff;
+  top: 44rpx;
+  left: 44rpx;
+  z-index: 11;
+}
+
+.all-count {
+  position: absolute;
+  width: 180rpx;
+  height: 180rpx;
+  padding-top: 40rpx;
+  top: 44rpx;
+  left: 44rpx;
+  z-index: 15;
+  text-align: center;
+}
+
+.all-count .num {
+  font-weight: 700;
+  color: #1f1f1f;
+  font-size: 40rpx;
+}
+
+.all-count .txt {
+  font-weight: 400;
+  color: #1f1f1f;
+  font-size: 32rpx;
+}
+
+.chart-title {
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 32rpx;
+}
+
+.tool .tool1 {
+  flex-direction: column;
+}
+
+.tool .tool2 {
+  flex-direction: column;
+}
+
+.tool1-circile {
+  margin-top: 14rpx;
+  margin-right: 12rpx;
+  width: 20rpx;
+  height: 20rpx;
+  background: #85abff;
+  border-radius: 50%;
+}
+
+.tool2-circile {
+  margin-top: 14rpx;
+  margin-right: 12rpx;
+  width: 20rpx;
+  height: 20rpx;
+  background: #e5eeff;
+  border-radius: 50%;
+}
+
+.flex-tool1 {
+  margin-bottom: 68rpx;
+}
+
+.tool1-title,
+.tool2-title {
+  font-size: 32rpx;
+  font-weight: 400;
+  color: #383d57;
+}
+
+.tool1-num,
+.tool2-num {
+  font-size: 44rpx;
+  font-weight: 700;
+  color: #85abff;
+}
+
+.tool2-num {
+  color: #383d57;
+  font-weight: 400;
+}
+
+.sxj-on-color {
+  color: #5FCB9D;
+}
+
+.sxj-on-bg-color {
+  background: #5FCB9D;
+}
+
+.sxj-off-color {
+  color: #cef0d5;
+}
+
+.sxj-off-bg-color {
+  background: #cef0d5;
+}
+
+.mj-on-color {
+  color: #6DDCD5;
+}
+
+.mj-on-bg-color {
+  background: #6DDCD5;
+}
+
+.mj-off-color {
+  color: #d9efee;
+}
+
+.mj-off-bg-color {
+  background: #d9efee;
+}
+
+.f2-chart {
+  width: 100%;
+}
+
+.alarm-con {
+  height: 600rpx;
+}
+
+.f2-canvas {
+  height: 500rpx !important;
+}
+
+.sys-icon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 6rpx;
+  margin-bottom: 6rpx;
+}
+
+.alarm-icon {
+  display: inline-block;
+  width: 8rpx;
+  height: 24rpx;
+  margin-right: 6rpx;
+  background: #0e5aff;
+}

@@ -1,0 +1,75 @@
+<view>
+  <view class="filter-top" bindtap='openFilterPopup'>
+    <view><image class="icon-filter" src="/images/filter.png"></image><text>筛选预警</text></view>
+    <view><van-icon name="arrow-down" /></view>
+  </view>
+  <!-- -->
+  <view class="content-list">
+    <block wx:for="{{alarmList}}" wx:key="index" wx:if="{{alarmList.length>0}}">
+      <view class="content" bindtap="toDetail">
+        <view class="mask" id="{{index}}"></view>
+        <view class="flex list" wx:if="{{item.warnType!='DEVICE_DOWN'}}">
+          <view class="dot-line {{item.status!='WAITING'?'read':''}}"><view class="dot"></view></view>
+          <view class="list-center flex">
+            <view class="alarm-title" >{{warnType[item.warnType]}}</view>
+            <view class="down alarm-content">{{item.warnContent}}</view>
+            <view class="alarm-time">{{item.warnTime}}</view>
+          </view>
+          <image src="{{item.image || item.faceImg}}" wx:if="{{item.image || item.faceImg}}"></image>
+          <!-- <image src="{{item.humanImg}}" wx:else></image> -->
+        </view>
+        <view class="list-center offline flex" wx:else>
+          <view class="dot-line {{item.status!='WAITING'?'read':''}}"><view class="dot"></view></view>
+          <view class="alarm-title">设备离线预警</view>
+          <view class="down alarm-content">{{item.warnContent}}已离线，请及时查看</view>
+          <view class="alarm-time">{{item.warnTime}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="read-con" bindtap="allRead"><image src="../../../images/clear.png"></image><text>全部已读</text></view>
+</view>
+<view wx:if="{{isLoaded && alarmList.length===0}}" class="empty">
+  <image src="/images/icon-empty.png"></image>
+  <view>暂无数据</view>
+</view>
+<view wx:if="{{ isLoaded && showMore}}" class="no-more">
+  <view>没有更多数据了</view>
+</view>
+<van-popup show="{{ showPopup }}" position="bottom" z-index="{{101}}">
+  <van-datetime-picker type="date" value="{{ currentDate }}" max-date="{{ maxDate }}" bind:confirm="confirmDate"
+    bind:cancel="cancel" />
+</van-popup>
+<van-popup show="{{ showFilterPopup }}" position="top"  close-on-click-overlay="{{true}}" bind:close="onFilterClose">
+  <view class="filter-con">
+    <view class="type-con flex">
+      <text  class="filter-title">预警类型</text>
+      <van-dropdown-menu  class="type-menu filter-right" active-color="#4BB082">
+        <van-dropdown-item value="{{ alarmType }}" bind:change='typeChange' options="{{ typeOptions }}" />
+      </van-dropdown-menu>
+    </view>
+    <view class="flex top-month">
+        <text class="filter-title">日期</text>
+        <view class="flex align-items-center filter-right" bindtap="openPopup">
+          <image src="/images/nfy_zpt_rqicon@2x.png"></image>
+          <text class="date" wx:if='{{currentYear}}'>{{currentYear}}年{{currentMonth}}月{{chooseDate}}日</text>
+          <text class="date" wx:if='{{!currentYear}}'>选择筛选日期</text>
+        </view>
+      </view>
+      <view class="time-box flex">
+      <text  class="filter-title">选择时段</text>
+      <view class="flex icon align-items-center filter-right" bindtap="openTimePop">
+        <image src="/images/time.png"></image>
+        <view>{{startTime}} ~ {{endTime}}</view>
+      </view>
+    </view>
+    <view class="flex bottom-btn">
+      <view bindtap="reset" class="reset-btn"><text>重置</text> </view>
+      <view class="line"></view>
+      <view bindtap="sure" class="reset-btn"><text>确认</text> </view>
+    </view>
+  </view>
+</van-popup>
+<van-popup z-index="{{101}}" show="{{ showTimePopup }}" position="bottom" custom-style="height: 50%">
+  <van-picker columns="{{ timePopupData }}" default-index="{{ [0,23] }}" bind:confirm="changeTime"  bind:cancel="cancel" show-toolbar />
+</van-popup>

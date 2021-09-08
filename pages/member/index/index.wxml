@@ -1,0 +1,75 @@
+<view class="mine">
+  <view class="mine-bottom flex bg-c">
+    <view class="textHidden">
+      <image class="school-img" src="/images/school-log.png"></image>
+      {{scence.name}}
+    </view>
+    <navigator hover-class="none" url="/pages/member/set/set">
+      <image src="/images/sz@2x.png"></image>
+    </navigator>
+  </view>
+  <view class="mine-name flex bg-c">
+    <view class="face-back">
+      <image mode="aspectFill" src="{{user.face}}" wx:if="{{user.face}}"></image>
+      <image src="/images/wd_mrtx@2x.png" wx:else></image>
+    </view>
+    <view class="name">
+      <view class="textHidden">{{user.name}}</view>
+      <text>{{user.phone}}</text>
+    </view>
+  </view>
+</view>
+
+<view class="statistics">
+  <view class="title">
+    <view class="title_icon"></view>工作统计
+  </view>
+  <view class="layout flex">
+    <view class="statistics-col">
+      <view class="col_title">
+        <image src="/images/seven.png"></image>
+        最近7天
+      </view>
+      <view class="col_value">{{count.day_7}}</view>
+      <view class="col_des">处理预警（条）</view>
+    </view>
+    <view class="statistics-col">
+      <view class="col_title">
+        <image src="/images/thirty.png"></image>
+        最近30天
+      </view>
+      <view class="col_value">{{count.day_30}}</view>
+      <view class="col_des">处理预警（条）</view>
+    </view>
+  </view>
+</view>
+
+<view class="checkIn">
+  <view class="title">
+    <view class="title_icon"></view>我的考勤
+  </view>
+  <view class="layout">
+    <van-cell class="item-text" title="日期" value="{{startTime}}" bindtap="openPopup" is-link />
+    <view class="tab-head">
+      <text class="left">考勤时段</text>
+      <text>状态</text>
+    </view>
+ 
+    <view class="record dark">
+      <text class="left">上班</text>
+      <text wx:if="{{dataList.upRecord == '正常'}}" style="color:#4EB087">{{dataList.upRecord}}</text>
+      <text wx:if="{{dataList.upRecord == '迟到' || dataList.upRecord == '未打卡'}}" style="color:#FF5A5A">{{dataList.upRecord}}</text>
+      <text wx:if="{{dataList.upRecord == '--'}}">--</text>
+    </view>
+    <view class="record dark">
+      <text class="left">下班</text>
+      <text wx:if="{{dataList.downRecord == '正常'}}" style="color:#4EB087">{{dataList.downRecord}}</text>
+      <text wx:if="{{dataList.downRecord == '早退' || dataList.downRecord == '未打卡'}}" style="color:#FF5A5A">{{dataList.downRecord}}</text>
+      <text wx:if="{{dataList.downRecord == '--'}}">--</text>
+    </view>
+  </view>
+</view>
+
+<van-popup show="{{ showPopup }}" position="bottom">
+  <van-datetime-picker type="date" value="{{ currentDate }}" bind:confirm="confirmDate" bind:cancel="cancel" />
+</van-popup>

@@ -1,0 +1,57 @@
+<!--pages/addressBook/index.wxml-->
+<view class="type-tabs">
+  <van-tabs active='{{active}}' bind:click="onClick">
+    <van-tab title="教师">
+      <van-search value="{{ teacherName }}" placeholder="请输入老师的姓名" bind:search="onSearchT" bind:clear="onClearT"
+        bind:change="changeInput" />
+      <view class="book-list">
+        <view class="silder">
+          <van-sidebar active-key="{{ activeKey }}" bind:change="onChangeT" custom-class="siderbar">
+            <van-sidebar-item title="{{item.name}}" wx:for="{{teacherGroup}}" wx:key="index" data-index="index" />
+          </van-sidebar>
+        </view>
+        <view class="list-layout" wx:if="{{teacherBook.length>0}}">
+          <view class="items border" wx:for="{{teacherBook}}" wx:key='index'>
+            <view>
+              <view class="title">{{item.phone}}</view>
+              <view class="date">{{item.name}}</view>
+            </view>
+            <view class="details" data-phone='{{item.phone}}' catchtap='freeTell'>
+              <van-icon color='#0E5AFF' size="64rpx" name="phone-circle" />
+            </view>
+          </view>
+        </view>
+        <view wx:else class="search_empty">
+          <image src="/images/icon-empty.png"></image>
+          <view>暂无数据</view>
+        </view>
+      </view>
+    </van-tab>
+    <van-tab title="职工">
+      <van-search value="{{ workerName }}" placeholder="请输入职工的姓名" bind:search="onSearchW" bind:clear="onClearW"
+        bind:change="changeInput" />
+      <view class="book-list">
+        <view class="silder">
+          <van-sidebar active-key="{{ activeKey }}" bind:change="onChangeW" custom-class="siderbar">
+            <van-sidebar-item title="{{item.name}}" wx:for="{{workerGroup}}" wx:key="index" data-index="index" />
+          </van-sidebar>
+        </view>
+        <view class="list-layout" wx:if="{{workerBook.length>0}}">
+          <view class="items border" wx:for="{{workerBook}}" wx:key='index'>
+            <view>
+              <view class="title">{{item.phone}}</view>
+              <view class="date">{{item.name}}</view>
+            </view>
+            <view class="details" data-phone='{{item.phone}}' catchtap='freeTell'>
+              <van-icon color='#0E5AFF' size="64rpx" name="phone-circle" />
+            </view>
+          </view>
+        </view>
+        <view wx:else class="search_empty">
+          <image src="/images/icon-empty.png"></image>
+          <view>暂无数据</view>
+        </view>
+      </view>
+    </van-tab>
+  </van-tabs>
+</view>

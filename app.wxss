@@ -1,0 +1,28 @@
+/**app.wxss**/
+page{
+  color: #333;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: 'iconfont';  /* Project id 1919349 */
+  src: url('//at.alicdn.com/t/font_1919349_ly7dou846tn.woff2?t=1627630123724') format('woff2'),
+       url('//at.alicdn.com/t/font_1919349_ly7dou846tn.woff?t=1627630123724') format('woff'),
+       url('//at.alicdn.com/t/font_1919349_ly7dou846tn.ttf?t=1627630123724') format('truetype');
+}
+view,input,textarea{
+  box-sizing: border-box;
+}
+.flex{
+  display: flex;
+}
+.align-items-center{
+  align-items: center;
+}
+.textHidden{
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+button::after{
+  border: none !important;
+}

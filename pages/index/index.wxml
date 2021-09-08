@@ -1,0 +1,246 @@
+<!--index.wxml-->
+<view class="bg-top"></view>
+
+<view class="swiper-con">
+	<swiper class="swiper" indicator-dots="{{true}}" autoplay="{{true}}">
+		<block wx:for="{{swiper}}" wx:key="index">
+			<swiper-item>
+				<van-image width="100%" radius='3' height="150" src="{{item}}" />
+			</swiper-item>
+		</block>
+	</swiper>
+</view>
+
+<view class="content">
+	<van-grid column-num="4" border="{{ false }}">
+		<van-grid-item use-slot class='grid-item' data-id='3' bind:click='handleLogin'>
+			<view class="item_view">
+				<view>
+					<image src="/images/Frame5.png"></image>
+				</view>
+				<text>实时预警</text>
+				<view class="dot" wx:if="{{unRead!=0}}">{{unRead}}</view>
+			</view>
+		</van-grid-item>
+		<van-grid-item use-slot class='grid-item' wx:if="{{isRealVideo}}" data-id='5' bind:click='handleLogin'>
+			<view class='item_view'>
+				<view>
+					<image src="/images/Frame3_1.png"></image>
+				</view>
+				<text>实时监控</text>
+			</view>
+		</van-grid-item>
+
+		<van-grid-item use-slot class='grid-item' wx:if="{{useSnapRecords}}" data-id='2' bind:click='handleLogin'>
+			<view class='item_view'>
+				<view>
+					<image src="/images/Frame3_2.png"></image>
+				</view>
+				<text>抓拍记录</text>
+			</view>
+		</van-grid-item>
+		<!-- <van-grid-item use-slot class='grid-item' data-id='6' bind:click='handleLogin'>
+			<view class='item_view'>
+				<view>
+					<image src="/images/Frame3_3.png"></image>
+				</view>
+				<text>数据统计</text>
+			</view>
+		</van-grid-item> -->
+		<van-grid-item use-slot class='grid-item' data-id='1' bind:click='handleLogin'>
+			<view class='item_view'>
+				<view>
+					<image src="/images/Frame3.png"></image>
+				</view>
+				<text>关注人员</text>
+			</view>
+		</van-grid-item>
+		<van-grid-item use-slot class='grid-item' wx:if="{{isCheckAttendance}}" data-id='7' bind:click='handleLogin'>
+			<view class='item_view'>
+				<view>
+					<image src="/images/Frame33.png"></image>
+				</view>
+				<text>考勤</text>
+			</view>
+		</van-grid-item>
+		<van-grid-item use-slot class='grid-item' data-id='4' bind:click='handleLogin'>
+			<view class='item_view'>
+				<view>
+					<image src="/images/Frame29.png"></image>
+				</view>
+				<text>以图找人</text>
+			</view>
+		</van-grid-item>
+	</van-grid>
+</view>
+<view class="margin-10"></view>
+<view class="news-con">
+	<view class="title">
+		<view class='sys-icon'>
+			<iconfont name="a-Frame4" size="18" />
+		</view>消息通知
+	</view>
+	<view class="list">
+		<view class="one-list" wx:for="{{newsData}}" wx:key='index' data-id='{{item.id}}' bindtap="toDetail">
+			<view class="{{item.file?'left':'left_long'}}">
+				<view class="new-title">{{item.title}}</view>
+				<view class="new-content">
+					<rich-text nodes="{{item.content}}" />
+				</view>
+				<view class="new-time">{{item.createTime}}</view>
+			</view>
+			<view class="{{item.file?'right':'right_no'}}">
+				<image mode="aspectFit" class="new-image" src="{{item.file}}"></image>
+			</view>
+		</view>
+	</view>
+	<view class="bottom" wx:if="{{newsData.length === 2}}">
+		<text class="more-view" bindtap="toNews">查看更多</text><text>></text>
+	</view>
+	<view class="bottom" wx:if="{{newsData.length === 1}}">
+		<text class="more-view" bindtap="toNews">暂无更多消息</text><text>></text>
+	</view>
+	<view class="bottom" wx:if="{{newsData.length === 0}}">
+		<text class="more-view" bindtap="toNews">暂未收到消息</text>
+	</view>
+</view>
+<view class="margin-10"></view>
+<view class="data-con">
+	<view class="title">
+		<view class="sys-icon">
+			<iconfont name="a-Group1274" size="18" />
+		</view>数据统计
+	</view>
+	<view class="data-chart">
+		<view class="student-data">
+			<view class="chart-title">
+				<view class='sys-icon'>
+					<iconfont name="a-Group1302" size="18" />
+				</view>学生人数
+			</view>
+			<view class="flex">
+				<view class="chart">
+					<view class="muscle">
+						<view class="sx1  muscle-sx3" style="transform: {{studentIs2?'rotate('+studentDeg+'deg)':'rotate(0deg)'}}">
+						</view>
+						<view class="sx2"
+							style="transform: {{!studentIs2?'rotate('+studentDeg+'deg)':'rotate(0deg)'}};background:{{studentIs2?'#e5eeff':'#85abff'}}">
+						</view>
+						<view class="pre"></view>
+						<view class="all-count">
+							<view class="num">{{onStudent + offStudent}}</view>
+							<view class="txt">总人数</view>
+						</view>
+					</view>
+				</view>
+				<view class="tool">
+					<view class="flex flex-tool1">
+						<view class="tool1-circile"></view>
+						<view class="flex tool1">
+							<view class="tool1-title">在校学生</view>
+							<view class="tool1-num">{{onStudent}}</view>
+						</view>
+					</view>
+					<view class="flex flex-tool2">
+						<view class="tool2-circile"></view>
+						<view class="flex tool2">
+							<view class="tool2-title">离校学生</view>
+							<view class="tool2-num">{{offStudent}}</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="data-chart">
+		<view class="student-data">
+			<view class="chart-title">
+				<view class='sys-icon'>
+					<iconfont name="a-Group1303" size="18" />
+				</view>摄像机
+			</view>
+			<view class="flex">
+				<view class="chart">
+					<view class="muscle sxj">
+						<view class="sx1  muscle-sx3" style="transform: {{sxjIs2?'rotate('+sxjDeg+'deg)':'rotate(0deg)'}}"></view>
+						<view class="sx2"
+							style="transform: {{!sxjIs2?'rotate('+sxjDeg+'deg)':'rotate(0deg)'}};background:{{sxjIs2?'#cef0d5':'#5FCB9D'}}">
+						</view>
+						<view class="pre"></view>
+						<view class="all-count">
+							<view class="num">{{offSxj+onSxj}}</view>
+							<view class="txt">总数</view>
+						</view>
+					</view>
+				</view>
+				<view class="tool">
+					<view class="flex flex-tool1">
+						<view class="tool1-circile sxj-on-bg-color"></view>
+						<view class="flex tool1">
+							<view class="tool1-title">在线设备</view>
+							<view class="tool1-num sxj-on-color">{{onSxj}}</view>
+						</view>
+					</view>
+					<view class="flex flex-tool2">
+						<view class="tool2-circile sxj-off-bg-color"></view>
+						<view class="flex tool2">
+							<view class="tool2-title">离线设备</view>
+							<view class="tool2-num">{{offSxj}}</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="data-chart">
+		<view class="student-data">
+			<view class="chart-title">
+				<view class='sys-icon'>
+					<iconfont name="a-Group1304" size="18" />
+				</view>门禁机
+			</view>
+			<view class="flex">
+				<view class="chart">
+					<view class="muscle mj">
+						<view class="sx1  muscle-sx3" style="transform: {{mjIs2?'rotate('+mjDeg+'deg)':'rotate(0deg)'}}"></view>
+						<view class="sx2"
+							style="transform: {{!mjIs2?'rotate('+mjDeg+'deg)':'rotate(0deg)'}};background:{{mjIs2?'#D9EFEE':'#6DDCD5'}}">
+						</view>
+						<view class="pre"></view>
+						<view class="all-count">
+							<view class="num">{{onMj+offMj}}</view>
+							<view class="txt">总数</view>
+						</view>
+					</view>
+				</view>
+				<view class="tool">
+					<view class="flex flex-tool1">
+						<view class="tool1-circile mj-on-bg-color"></view>
+						<view class="flex tool1">
+							<view class="tool1-title">在线设备</view>
+							<view class="tool1-num mj-on-color">{{onMj}}</view>
+						</view>
+					</view>
+					<view class="flex flex-tool2">
+						<view class="tool2-circile mj-off-bg-color"></view>
+						<view class="flex tool2">
+							<view class="tool2-title">离线设备</view>
+							<view class="tool2-num">{{offMj}}</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="margin-10"></view>
+<view class="alarm-con">
+	<view class="title">
+		<view class="alarm-icon"></view>预警统计
+	</view>
+	<f2 wx:if="{{hasAlarm}}" class="f2-chart" id="bar" canvas-id="bar" opts="{{ opts }}" />
+	<view wx:else class="empty">
+		<image src="/images/icon-empty.png"></image>
+		<view>暂无数据</view>
+	</view>
+</view>

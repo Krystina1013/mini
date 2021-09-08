@@ -1,0 +1,10 @@
+<!--pages/news/detail/index.wxml-->
+<view>
+  <view class="header">
+    <view class="title">{{searchData.title}}</view>
+    <view class="date">{{searchData.createTime}}</view>
+  </view>
+  <view class="content">
+    <rich-text nodes="{{searchData.content}}" />
+  </view>
+</view>

@@ -1,0 +1,140 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "登录",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 1,
+          "name": "首页",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "关注人员",
+          "pathName": "pages/attention/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "关注人员详情",
+          "pathName": "pages/attention/detail/detail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "抓拍记录",
+          "pathName": "pages/capture/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "抓拍记录详情",
+          "pathName": "pages/capture/detail/detail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "加入关注人",
+          "pathName": "pages/capture/join/join",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "查看短视频",
+          "pathName": "pages/capture/video/video",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "抓拍-以图搜图",
+          "pathName": "pages/capture/search/search",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "抓拍-以图搜图-结果",
+          "pathName": "pages/capture/searchList/searchList",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "实时预警",
+          "pathName": "pages/alarm/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "实时预警详情",
+          "pathName": "pages/alarm/detail/detail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "实时预警-反馈",
+          "pathName": "pages/alarm/feedback/feedback",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "首页-以图找人",
+          "pathName": "pages/faceSearch/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "首页-以图找人-列表",
+          "pathName": "pages/faceSearch/list/list",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "首页-以图找人-详情",
+          "pathName": "pages/faceSearch/detail/detail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的",
+          "pathName": "pages/member/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "设置-个人信息",
+          "pathName": "pages/member/set/set",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "新手机号",
+          "pathName": "pages/member/newPhone/newPhone",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "发动验证码",
+          "pathName": "pages/member/updatePhone/updatePhone",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

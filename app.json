@@ -1,0 +1,73 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/home/index",
+    "pages/attention/index/index",
+    "pages/attention/detail/detail",
+    "pages/capture/index/index",
+    "pages/capture/detail/detail",
+    "pages/capture/join/join",
+    "pages/capture/video/video",
+    "pages/capture/search/search",
+    "pages/capture/searchList/searchList",
+    "pages/alarm/index/index",
+    "pages/alarm/detail/detail",
+    "pages/alarm/feedback/feedback",
+    "pages/faceSearch/index/index",
+    "pages/faceSearch/list/list",
+    "pages/faceSearch/detail/detail",
+    "pages/member/index/index",
+    "pages/member/set/set",
+    "pages/member/newPhone/newPhone",
+    "pages/member/updatePhone/updatePhone",
+    "pages/login/login",
+    "pages/realTimeMonito/list/index",
+    "pages/realTimeMonito/detail/index",
+    "pages/addressBook/index",
+    "pages/news/notification/index",
+    "pages/news/detail/index",
+    "pages/checkIn/workerCheck/index",
+    "pages/checkIn/classCheck/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#bdc1d3",
+    "selectedColor": "#0e5aff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/home.png",
+        "selectedIconPath": "/images/home-s.png"
+      },
+      {
+        "pagePath": "pages/news/notification/index",
+        "text": "消息",
+        "iconPath": "/images/xiaoxi.png",
+        "selectedIconPath": "/images/xiaoxi-s.png"
+      },
+      {
+        "pagePath": "pages/addressBook/index",
+        "text": "通讯录",
+        "iconPath": "/images/phones.png",
+        "selectedIconPath": "/images/phones-s.png"
+      },
+      {
+        "pagePath": "pages/member/index/index",
+        "text": "我的",
+        "iconPath": "/images/my.png",
+        "selectedIconPath": "/images/my-s.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "iconfont": "/iconfont/iconfont"
+    }
+}

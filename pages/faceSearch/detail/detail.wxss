@@ -1,0 +1,52 @@
+.avatar image {
+  width: 98rpx;
+  height: 98rpx;
+  /* border-radius: 50%; */
+}
+
+.avatar {
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #ebedf0;
+}
+
+.list {
+  padding: 0 16px;
+}
+
+page .cell {
+  padding: 12px 40rpx !important;
+}
+
+.one-person {
+  width: calc();
+  padding: 30rpx 0;
+  border: 2rpx solid #ebeef5;
+  margin-bottom: 30rpx;
+}
+
+.one-person .van-field__label {
+  color: #323233 !important;
+}
+
+.one-person .van-field__body textarea {
+  color: #969799 !important;
+}
+
+.empty {
+  width: 100%;
+  margin-top: 200rpx;
+  text-align: center;
+  color: #979797;
+  font-size: 28rpx;
+}
+
+.empty image {
+  width: 380rpx;
+  height: 356rpx;
+}
+
+.empty>view {
+  text-align: center;
+}

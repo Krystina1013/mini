@@ -1,0 +1,39 @@
+.list-pad{
+  padding: 0 16px;
+}
+.avatar image{
+  width: 98rpx;
+  height: 98rpx;
+  border-radius: 50%;
+}
+.avatar text{
+  color: #646566;
+}
+.avatar{
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #ebedf0;
+}
+.group image{
+  width: 24rpx;
+  height: 48rpx;
+  transform: rotate(180deg);
+}
+.choose{
+  flex: 1;
+  margin: 0 60rpx 0 62rpx;
+}
+.save-btn{
+  width: 654rpx;
+  height: 104rpx;
+  background: #4BB082;
+  border-radius: 52rpx;
+  position: fixed;
+  bottom: 30rpx;
+  left: 50%;
+  margin-left:-327rpx;
+  font-size: 36rpx;
+  color: #fff;
+  line-height:104rpx;
+}

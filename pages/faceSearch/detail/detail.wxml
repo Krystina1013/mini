@@ -1,0 +1,40 @@
+<view wx:if="{{ detail.length }}">
+  <view class="one-person" wx:for="{{detail}}" wx:key="{{index}}">
+    <view class="list">
+      <view class="avatar flex">
+        <text>头像</text>
+        <image src="{{item.face}}" mode="aspectFit" wx:if="{{item.face}}"></image>
+        <image src="/images/wd_mrtx@2x.png" mode="aspectFit" wx:else></image>
+      </view>
+    </view>
+    <van-cell custom-class="cell" title="姓名" value="{{item.name}}" size="large" />
+    <van-cell custom-class="cell" title="人员类型" value="{{item.scenceUserType=='careMan'?'关注人员':item.scenceUserType}}"
+      size="large" />
+    <van-cell title="联系电话" value="{{item.phone || '--'}}" size="large"
+      wx:if="{{!item.studentNo || item.scenceUserType === '家长'}}" />
+    <van-cell title="学生姓名" value="{{item.studentName}}" size="large" wx:if="{{item.studentName}}" />
+    <van-cell title="班级" value="{{item.className}}" size="large" wx:if="{{item.studentNo}}" />
+    <van-cell title="学号" value="{{item.studentNo}}" size="large" wx:if="{{item.studentNo}}" />
+    <van-cell title="家长1姓名" value="{{item.relativeName1}}" size="large"
+      wx:if="{{item.studentNo && item.scenceUserType !== '家长'}}" />
+    <van-cell title="家长1关系" value="{{item.relativeType1}}" size="large"
+      wx:if="{{item.studentNo && item.scenceUserType !== '家长'}}" />
+    <van-cell title="家长1联系电话" value="{{item.relativePhone1}}" size="large"
+      wx:if="{{item.studentNo && item.scenceUserType !== '家长'}}" />
+    <van-cell title="家长2姓名" value="{{item.relativeName2}}" size="large"
+      wx:if="{{item.studentNo && item.scenceUserType !== '家长'}}" />
+    <van-cell title="家长2关系" value="{{item.relativeType2}}" size="large"
+      wx:if="{{item.studentNo && item.scenceUserType !== '家长'}}" />
+    <van-cell title="家长2联系电话" value="{{item.relativePhone2}}" size="large"
+      wx:if="{{item.studentNo && item.scenceUserType !== '家长'}}" />
+    <van-cell title="所属部门" value="{{item.workerGroupName}}" size="large" wx:if="{{item.workerGroupName}}" />
+    <van-cell title="身份证号" value="{{item.idCard || '--'}}" size="large" wx:if="{{item.scenceUserType === '其他人员'}}" />
+    <van-field label="备注" value="{{ item.note || '--' }}" disabled type="textarea" autosize size="large"
+      wx:if="{{ item.scenceUserType !== '家长'}}" />
+  </view>
+</view>
+
+<view wx:else class="empty">
+  <image src="/images/icon-empty.png"></image>
+  <view>暂无数据</view>
+</view>

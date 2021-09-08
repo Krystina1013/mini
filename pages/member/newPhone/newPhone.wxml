@@ -1,0 +1,8 @@
+<view class="phone">当前绑定的手机号为：<text>{{oldPhone}}</text></view>
+
+<view class="list flex">
+  <text>新手机号</text>
+  <input type="number" placeholder="请输入新手机号" maxlength="11" bindinput="bindPhone"/>
+</view>
+
+<button class="btn" bindtap="next">下一步</button>

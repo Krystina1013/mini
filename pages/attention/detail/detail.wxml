@@ -1,0 +1,17 @@
+<view class="list flex">
+  <text>头像</text>
+  <image wx:if="{{detail.info.faceUrl.length}}" src="{{detail.info.faceUrl}}"></image>
+  <image wx:else src="/images/wd_mrtx@2x.png"></image>
+</view>
+<view class="list flex">
+  <text>姓名</text>
+  <view>{{detail.info.name||"--"}}</view>
+</view>
+<view class="list flex">
+  <text>所属分组</text>
+  <view>{{detail.info.alertTaskName}}</view>
+</view>
+<view class="list flex">
+  <text>备注</text>
+  <view>{{detail.info.remark||""}}</view>
+</view>

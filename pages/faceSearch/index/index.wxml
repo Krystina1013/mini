@@ -1,0 +1,5 @@
+<view>
+  <image src="/images/upload.png" class="img" bindtap="chooseImg" wx:if="{{!tempFilePaths}}"></image>
+  <image src="{{tempFilePaths}}" class="img" bindtap="chooseImg" mode="aspectFill" wx:else></image>
+</view>
+<button class="btn" disabled="{{btnClick}}" bindtap="search">搜索</button>

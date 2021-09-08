@@ -1,0 +1,61 @@
+
+  <view class="capture" wx:if="{{detail.image||detail.faceImg}}">
+    <view class="two-img">
+      <view class="two-one-img"  wx:if="{{detail.faceImg}}">
+        <image mode="aspectFit" bindtap="bigImg" data-imgurl="{{detail.faceImg}}" src="{{detail.faceImg}}" wx:if="{{detail.faceImg}}"></image>
+        <view class="img-title">头像</view>
+      </view>
+      <view class="two-one-img" wx:if="{{detail.humanImg}}">
+        <image mode="aspectFit" bindtap="bigImg" data-imgurl="{{detail.humanImg}}" src="{{detail.humanImg}}" wx:if="{{detail.humanImg}}"></image>
+        <view class="img-title">全身图</view>
+      </view>
+    </view>
+    <view class="one-img">
+      <image mode="aspectFill" bindtap="bigImg" data-imgurl="{{detail.panoramaImg}}" src="{{detail.panoramaImg}}" wx:if="{{detail.panoramaImg}}"></image>
+      <view>全景图</view>
+    </view>
+
+</view>
+<view class="alarm-one">
+  <view class="title">预警类型:</view>
+  <view class="value">{{warnType[detail.warnType] + (detail.warnType == 'STRANGER'?('('+(detail.isOutStrange?'校外陌生人':'非本楼栋人员')+')'):'')}}</view>
+  <!-- <view class="value">{{warnType[detail.warnType]}}</view> -->
+</view>
+<view class="alarm-one">
+  <view class="title">预警设备:</view>
+  <view class="value">{{detail.deviceName}}</view>
+</view>
+<view class="alarm-one">
+  <view class="title">预警时间:</view>
+  <view class="value">{{detail.warnTime}}</view>
+</view>
+<view class="alarm-content">
+  <view class="title">预警信息:</view>
+  <view class="value">{{detail.warnContent}}</view>
+</view>
+<view class="alarm-one" wx:if="{{detail.processTime}}">
+  <view class="title">反馈时间:</view>
+  <view class="value">{{detail.processTime||""}}</view>
+</view>
+<view class="alarm-content" wx:if="{{detail.processTime}}">
+  <view class="title">反馈内容:</view>
+  <view class="value">{{detail.remark||""}}</view>
+</view>
+<!-- <view class="capture" wx:if="{{detail.processTime}}">
+  <view>反馈内容</view>
+  <view class="remark">{{detail.remark||""}}</view>
+</view> -->
+<view class="alarm-content" wx:if="{{detail.processTime}}">
+  <view class="title">反馈截图</view>
+  <view class="fk-img-list">
+    <view wx:for="{{detail.processImages}}" class="imglist" wx:key="index">
+      <image mode="widthFix" bindtap="bigImg" data-imgurl="{{item}}" src="{{item}}" mode="aspectFit"></image>
+    </view>
+  </view>
+  
+</view>
+
+
+<view class="empty" wx:if="{{detail.status=='WAITING'||detail.status=='READ'}}"></view>
+<button class="btn" bindtap="feedback" wx:if="{{!detail.processTime}}">反馈</button>
+

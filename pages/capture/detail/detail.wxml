@@ -1,0 +1,75 @@
+<view class="padding-con">
+<view class="avatar">
+  <view class="image-con image-con1">
+    <image src="{{detail.faceInfo.faceUrl}}" bindtap="bigImg" data-imgurl="{{detail.faceInfo.faceUrl}}" mode="aspectFit"></image>
+    <view>头像</view>
+  </view>
+  <view wx:if="{{detail.humanInfo.humanImg}}" class="image-con">
+    <image src="{{detail.humanInfo.humanImg}}" bindtap="bigImg" data-imgurl="{{detail.humanInfo.humanImg}}" mode="aspectFit"></image>
+    <view>全身图</view>
+  </view>
+</view>
+<view class="big image-con">
+  <image src="{{detail.faceInfo.panoramaImg}}" bindtap="bigImg" data-imgurl="{{detail.faceInfo.panoramaImg}}" mode="aspectFit"></image>
+    <view>全景图</view>
+</view>
+</view>
+<view class="list flex ">
+  <text>抓拍时间</text>
+  <text class="textHidden">{{detail.time}}</text>
+</view>
+<view class="list flex">
+  <text>设备名称</text>
+  <text class="textHidden" wx:if="{{detail.cameraCutVo}}">{{detail.cameraCutVo.name}}</text>
+  <text class="textHidden" wx:else>--</text>
+</view>
+<view class="list flex">
+  <text>设备IP</text>
+  <text class="textHidden" wx:if="{{detail.cameraCutVo}}">{{detail.cameraCutVo.activeIp}}</text>
+  <text class="textHidden" wx:else>--</text>
+</view>
+<view class="list flex">
+  <text>设备型号</text>
+  <text class="textHidden" wx:if="{{detail.cameraCutVo}}">{{detail.cameraCutVo.typeDesc}}</text>
+  <text class="textHidden" wx:else>--</text>
+</view>
+<view class="info-con">
+  <view class="person-title">人员信息：</view>
+  <view class="info-data-con" wx:if="{{detail.goodFace !== 0 && detail.scenceUserList.length === 0}}">陌生人</view>
+  <view class="info-data-con" wx:if="{{detail.goodFace == 0 && detail.scenceUserList.length === 0}}">人脸不清晰</view>
+  <view wx:for="{{detail.scenceUserList}}" wx:key="{{index}}" class="person-one-con">
+    <view class="list info-data-con flex" wx:if="{{item.scenceUserType!=null}}">
+      <text>人员类型</text>
+      <text class="textHidden">{{item.scenceUserType}}</text>
+    </view>
+    <view class="list info-data-con flex" wx:if="{{item.name!=null}}">
+      <text>姓名</text>
+      <text class="textHidden">{{item.name}}</text>
+    </view>
+    <view class="list info-data-con flex" wx:if="{{item.workerGroupName && item.scenceUserType === '职工人员'}}">
+      <text>职工人员分组</text>
+      <text class="textHidden">{{item.workerGroupName}}</text>
+    </view>
+    <view class="list info-data-con flex" wx:if="{{item.workerGroupName && item.scenceUserType === '关注人员'}}">
+      <text>关注人员分组：</text>
+      <text class="textHidden">{{item.workerGroupName}}</text>
+    </view>
+    <view class="list info-data-con flex" wx:if="{{item.studentNo && item.scenceUserType === '学生'}}">
+      <text>学号</text>
+      <text class="textHidden">{{item.studentNo}}</text>
+    </view>
+    <view class="list info-data-con flex" wx:if="{{item.className && item.scenceUserType === '学生'}}">
+      <text>班级</text>
+      <text class="textHidden">{{item.className}}</text>
+    </view>
+    <view class="list info-data-con flex" wx:if="{{item.phone && (item.scenceUserType == '职工人员' || item.scenceUserType == '老师')}}">
+      <text>手机号</text>
+      <text class="textHidden">{{item.phone}}</text>
+    </view>
+  </view> 
+</view>
+<view class="empty"></view>
+<view class="bottom flex">
+  <navigator hover-class="none" url="/pages/capture/join/join"><view>加入关注人</view></navigator>
+  <view bindtap="playVideo">查看短视频</view>
+</view>

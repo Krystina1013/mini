@@ -1,0 +1,171 @@
+<!--pages/checkIn/classCheck.wxml-->
+
+<view class="class_info">
+  <text>{{className}}</text>
+  <view>
+    <image class="img" src="../../../images/student-c.png" alt=""></image><text>{{dataForm.totalCount||0}}人</text>
+  </view>
+</view>
+
+<view class="type-tabs">
+  <van-tabs active='{{active}}' bind:click="onClick">
+    <van-tab title="全部"></van-tab>
+    <van-tab title="走读生"></van-tab>
+    <van-tab title="住宿生"></van-tab>
+  </van-tabs>
+</view>
+
+<view class="type-show">
+  <van-cell title="日期" value="{{startTime}}" bindtap="openPopup" is-link />
+  <van-collapse accordion value="{{ activeName }}" bind:change="onChange">
+    <van-collapse-item title="正常上学" name="1">
+      <view slot="value" class="item-text">
+        <view class="normal">{{dataForm.normalUpCount||0}}</view>人
+      </view>
+      <view class="tab-head">
+        <text class="left">姓名</text>
+        <text>学号</text>
+      </view>
+      <view wx:if="{{normalUpList.length>0}}">
+        <view class="tab-body dark" wx:for="{{normalUpList}}" wx:key='index'>
+          <text class="left">{{item.name}}</text>
+          <text>{{item.studentNo}}</text>
+        </view>
+      </view>
+      <view wx:else class="tab-body dark">
+        <text class="left">--</text>
+        <text>--</text>
+      </view>
+    </van-collapse-item>
+  </van-collapse>
+  <van-collapse accordion value="{{ activeName }}" bind:change="onChange">
+    <van-collapse-item title="迟到学生" name="2">
+      <view slot="value" class="item-text">
+        <view class="warning">{{dataForm.lateCount||0}}</view>人
+      </view>
+      <view class="tab-head">
+        <text class="left">姓名</text>
+        <text>学号</text>
+      </view>
+      <view wx:if="{{lateList.length>0}}">
+        <view class="tab-body dark" wx:for="{{lateList}}" wx:key='index'>
+          <text class="left">{{item.name}}</text>
+          <text>{{item.studentNo}}</text>
+        </view>
+      </view>
+      <view wx:else class="tab-body dark">
+        <text class="left">--</text>
+        <text>--</text>
+      </view>
+    </van-collapse-item>
+  </van-collapse>
+  <van-collapse accordion value="{{ activeName }}" bind:change="onChange">
+    <van-collapse-item title="正常放学" name="3">
+      <view slot="value" class="item-text">
+        <view class="normal">{{dataForm.normalDownCount||0}}</view>人
+      </view>
+      <view class="tab-head">
+        <text class="left">姓名</text>
+        <text>学号</text>
+      </view>
+      <view wx:if="{{normalDownList.length>0}}">
+        <view class="tab-body dark" wx:for="{{normalDownList}}" wx:key='index'>
+          <text class="left">{{item.name}}</text>
+          <text>{{item.studentNo}}</text>
+        </view>
+      </view>
+      <view wx:else class="tab-body dark">
+        <text class="left">--</text>
+        <text>--</text>
+      </view>
+    </van-collapse-item>
+  </van-collapse>
+  <van-collapse accordion value="{{ activeName }}" bind:change="onChange">
+    <van-collapse-item title="早退学生" name="4">
+      <view slot="value" class="item-text">
+        <view class="warning">{{dataForm.earlyCount||0}}</view>人
+      </view>
+      <view class="tab-head">
+        <text class="left">姓名</text>
+        <text>学号</text>
+      </view>
+      <view wx:if="{{earlyList.length>0}}">
+        <view class="tab-body dark" wx:for="{{earlyList}}" wx:key='index'>
+          <text class="left">{{item.name}}</text>
+          <text>{{item.studentNo}}</text>
+        </view>
+      </view>
+      <view wx:else class="tab-body dark">
+        <text class="left">--</text>
+        <text>--</text>
+      </view>
+    </van-collapse-item>
+  </van-collapse>
+  <van-collapse accordion value="{{ activeName }}" bind:change="onChange">
+    <van-collapse-item title="未打卡学生" name="5">
+      <view slot="value" class="item-text">
+        <view class="warning">{{dataForm.noAttendanceCount||0}}</view>人
+      </view>
+      <view class="tab-head">
+        <text class="left">姓名</text>
+        <text>学号</text>
+      </view>
+      <view wx:if="{{nocardList.length>0}}">
+        <view class="tab-body dark" wx:for="{{nocardList}}" wx:key='index'>
+          <text class="left">{{item.name}}</text>
+          <text>{{item.studentNo}}</text>
+        </view>
+      </view>
+      <view wx:else class="tab-body dark">
+        <text class="left">--</text>
+        <text>--</text>
+      </view>
+    </van-collapse-item>
+  </van-collapse>
+  <van-collapse accordion value="{{ activeName }}" bind:change="onChange">
+    <van-collapse-item title="晚归学生" wx:if="{{active!=1}}" name="6">
+      <view slot="value" class="item-text">
+        <view class="warning">{{dataForm.lateBackCount||0}}</view>人
+      </view>
+      <view class="tab-head">
+        <text class="left">姓名</text>
+        <text>学号</text>
+      </view>
+      <view wx:if="{{latebackList.length>0}}">
+        <view class="tab-body dark" wx:for="{{latebackList}}" wx:key='index'>
+          <text class="left">{{item.name}}</text>
+          <text>{{item.studentNo}}</text>
+        </view>
+      </view>
+      <view wx:else class="tab-body dark">
+        <text class="left">--</text>
+        <text>--</text>
+      </view>
+    </van-collapse-item>
+  </van-collapse>
+  <van-collapse accordion value="{{ activeName }}" bind:change="onChange">
+    <van-collapse-item title="未归学生" wx:if="{{active!=1}}" name="7">
+      <view slot="value" class="item-text">
+        <view class="warning">{{dataForm.noReturnCount||0}}</view>人
+      </view>
+      <view class="tab-head">
+        <text class="left">姓名</text>
+        <text>学号</text>
+      </view>
+      <view wx:if="{{nobackList.length>0}}">
+        <view class="tab-body dark" wx:for="{{nobackList}}" wx:key='index'>
+          <text class="left">{{item.name}}</text>
+          <text>{{item.studentNo}}</text>
+        </view>
+      </view>
+      <view wx:else class="tab-body dark">
+        <text class="left">--</text>
+        <text>--</text>
+      </view>
+    </van-collapse-item>
+  </van-collapse>
+</view>
+
+<van-popup show="{{ showPopup }}" position="bottom">
+  <van-datetime-picker type="date" value="{{ currentDate }}" bind:confirm="confirmDate" bind:cancel="cancel" />
+</van-popup>

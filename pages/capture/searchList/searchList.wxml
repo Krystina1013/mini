@@ -1,0 +1,16 @@
+<view class="layout">
+  <view class="con" wx:if="{{searchData.length > 0}}">
+    <view class="list" wx:for="{{searchData}}" wx:key="index">
+      <!-- <navigator hover-class="none" url="/pages/capture/detail/detail"> -->
+        <view>
+        <image src="{{item.faceInfo.faceUrl}}" bindtap="toDetail" id="{{index}}"></image>
+        <!-- <view class="textHidden">姓名</view> -->
+      <!-- </navigator> -->
+    </view>
+    </view>
+  </view>
+  <view class="empty" wx:if="{{searchData.length === 0}}">
+    <image src="/images/icon-empty.png"></image>
+    <view>暂无数据</view>
+  </view>
+</view>

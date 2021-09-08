@@ -1,0 +1,22 @@
+/* pages/realTimeMonito/detail/index.wxss */
+
+.time-box{
+  width: 100%;
+  font-size: 28rpx;
+  padding: 10rpx 32rpx;
+  line-height: 52rpx;
+}
+.textName{
+  width: 150rpx;
+}
+.video{
+  width: 90%;
+  height: 474rpx;
+  background: #D8D8D8;
+  border-radius: 8rpx;
+  margin: 40rpx auto auto auto;
+}
+.video video{
+  width: 100%;
+  height: 100%;
+}

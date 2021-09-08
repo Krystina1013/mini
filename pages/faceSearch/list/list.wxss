@@ -1,0 +1,27 @@
+page{
+  padding-top: 30rpx;
+}
+.list image{
+  width: 176rpx;
+  height: 176rpx;
+  border-radius: 105rpx;
+}
+.list{
+  width: 176rpx;
+  text-align: center;
+  font-size: 32rpx;
+  margin: 0 auto 40rpx;
+}
+.layout{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.empty{
+  text-align: center;
+  margin: 200rpx auto;
+  color: #999;
+}
+.empty image{
+  width: 380rpx;
+  height: 356rpx;
+}

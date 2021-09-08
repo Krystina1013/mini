@@ -1,0 +1,21 @@
+page{
+  padding:70rpx 30rpx 0;
+  text-align: center;
+}
+.img{
+  width: 500rpx;
+  height: 500rpx;
+}
+.btn{
+  width: 654rpx;
+  height: 104rpx;
+  background: #4BB082;
+  border-radius: 52rpx;
+  color: #fff;
+  font-size: 36rpx;
+  line-height: 104rpx;
+  position: fixed;
+  bottom: 30rpx;
+  left: 50%;
+  margin-left: -327rpx;
+}

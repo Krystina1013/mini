@@ -1,0 +1,20 @@
+/* pages/news/detail/index.wxss */
+.header{
+  padding: 32rpx;
+  border-top: 2rpx solid #f9f9f9;
+  border-bottom: 2rpx solid #f9f9f9;
+}
+.title{
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #1F1F1F;
+}
+.date{
+  margin-top: 12rpx;
+  font-size: 28rpx;
+  color: #999999;
+}
+.content{
+  padding: 32rpx;
+  line-height: 54rpx;
+}

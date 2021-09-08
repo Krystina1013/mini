@@ -1,0 +1,16 @@
+<view class="top">
+  <view class="title">请输入验证码</view>
+<view class="phone flex">
+  验证码已短信发送至
+  <text class="num">{{phone}}</text>
+  <text class="tip">新手机号</text>
+</view>
+</view>
+
+<view>
+  <van-field value="{{ sms }}" center maxlength="6" label="验证码" placeholder="请输入验证码" border="{{ false }}" use-button-slot bind:change="onChange">
+    <button slot="button"  bindtap="sendCode"  disabled="{{isDiabled}}" class="code-btn">{{buttonText!='发送验证码'?buttonText+'s':'发送验证码'}} </button>
+  </van-field>
+</view>
+
+<button class="btn" bindtap="update">完成</button>

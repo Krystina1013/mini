@@ -1,0 +1,24 @@
+<view class="feedback">
+  <view class="label">反馈信息</view>
+  <textarea confirm-type="done" bindinput="bindTextArea" cols="30" rows="10" placeholder="描述您遇到的问题或建议，上传截图页面能更快解决哦" class="textarea" maxlength='300'></textarea>
+  <text class="word">剩余{{(300-words.length)<0?'0':(300-words.length)}}字</text>
+</view>
+<view class="feedback">
+  <view class="label">上传图片 <text>（最多可以添加6张，选填）</text></view>
+  <view class="upload">
+    <view wx:for="{{uploadList}}" wx:key="index">
+      <image mode="aspectFit" src="{{item}}"></image>
+      <image src="/images/close.png" class="close" bindtap="delImg" id="{{index}}"></image>
+    </view>
+    <image src="/images/nfy_jyfk_scicon@2x.png" wx:if="{{uploadList.length<6}}" bindtap="chooseImg"></image>
+  </view>
+</view>
+<view class="feedback time" wx:if="{{alarm.warnType =='CARE_MAN'}}">
+  <view>暂停预警警时长</view>
+  <view class="time-select">
+    <text  class="{{time==30?'click-style':'normal-style'}}"  bindtap="selectTime" data-id='30'>30分钟</text><text class="{{time==120?'click-style':'normal-style'}}"  data-id='120' bindtap="selectTime">2小时</text><text class="{{time==480?'click-style':'normal-style'}}" data-id='480' bindtap="selectTime">8小时</text><text class="{{time==1440?'click-style':'normal-style'}}"   data-id='1440' bindtap="selectTime">24小时</text>
+  </view>
+  
+</view>
+<view class="empty"></view>
+<button class="btn" bindtap="submit">提交</button>

@@ -1,0 +1,13 @@
+<!--pages/home/index.wxml-->
+<view>
+  <view class="logo">
+		<image src="/images/manage.png"></image>
+  </view>
+  <view class="bottom">
+    <button class="wechat" open-type="getPhoneNumber" bindgetphonenumber="wechatLogin">
+      微信授权登录
+	  </button>
+	<button class="login" bindtap="toLogin">账号登录</button>
+
+  </view>
+</view>

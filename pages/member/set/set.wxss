@@ -1,0 +1,29 @@
+.avatar image{
+  width: 98rpx;
+  height: 98rpx;
+  border-radius: 50%;
+}
+.avatar{
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #ebedf0;
+}
+.list{
+  padding: 0 16px;
+}
+page .cell{
+  padding: 12px 40rpx !important;
+}
+.btn{
+  width: 654rpx;
+  height: 104rpx;
+  border-radius: 52rpx;
+  border: 2rpx solid #4BB082;
+  position: fixed;
+  bottom: 30rpx;
+  left: 50%;
+  margin-left: -327rpx;
+  background: #fff;
+  color: #4BB082;
+}

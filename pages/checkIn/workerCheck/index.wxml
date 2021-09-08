@@ -1,0 +1,113 @@
+<!--pages/checkIn/index.wxml-->
+<van-tabs active='{{active}}' bind:click="onClick">
+  <van-tab title="教职工">
+    <view class="type-show">
+      <van-cell title="日期" value="{{startTime}}" bindtap="openPopup" is-link />
+      <van-collapse accordion value="{{ activeName }}" bind:change="onChange">
+        <van-collapse-item title="正常上班" name="1">
+          <view slot="value" class="item-text">
+            <view class="normal">{{dataFormWorker.normalUpCount||0}}</view>人
+          </view>
+          <view class="tab-head">
+            <text class="left">姓名</text>
+            <text>手机号</text>
+          </view>
+          <view wx:if="{{workerLatebackList.length>0}}">
+            <view class="tab-body dark" wx:for="{{workerLatebackList}}" wx:key='index'>
+              <text class="left">{{item.name}}</text>
+              <text>{{item.phone}}</text>
+            </view>
+          </view>
+          <view wx:else class="tab-body dark">
+            <text class="left">--</text>
+            <text>--</text>
+          </view>
+        </van-collapse-item>
+      </van-collapse>
+      <van-collapse accordion value="{{ activeName }}" bind:change="onChange">
+        <van-collapse-item title="正常下班" name="3">
+          <view slot="value" class="item-text">
+            <view class="normal">{{dataFormWorker.normalDownCount||0}}</view>人
+          </view>
+          <view class="tab-head">
+            <text class="left">姓名</text>
+            <text>手机号</text>
+          </view>
+          <view wx:if="{{workerNobackList.length>0}}">
+            <view class="tab-body dark" wx:for="{{workerNobackList}}" wx:key='index'>
+              <text class="left">{{item.name}}</text>
+              <text>{{item.phone}}</text>
+            </view>
+          </view>
+          <view wx:else class="tab-body dark">
+            <text class="left">--</text>
+            <text>--</text>
+          </view>
+        </van-collapse-item>
+      </van-collapse>
+
+      <van-collapse accordion value="{{ activeName }}" bind:change="onChange">
+        <van-collapse-item title="早退" name="4">
+          <view slot="value" class="item-text">
+            <view class="warning">{{dataFormWorker.earlyCount||0}}</view>人
+          </view>
+          <view class="tab-head">
+            <text class="left">姓名</text>
+            <text>手机号</text>
+          </view>
+          <view wx:if="{{workerEarlyList.length>0}}">
+            <view class="tab-body dark" wx:for="{{workerEarlyList}}" wx:key='index'>
+              <text class="left">{{item.name}}</text>
+              <text>{{item.phone}}</text>
+            </view>
+          </view>
+          <view wx:else class="tab-body dark">
+            <text class="left">--</text>
+            <text>--</text>
+          </view>
+        </van-collapse-item>
+      </van-collapse>
+
+      <van-collapse accordion value="{{ activeName }}" bind:change="onChange">
+        <van-collapse-item title="未打卡" name="5">
+          <view slot="value" class="item-text">
+            <view class="warning">{{dataFormWorker.noAttendanceCount||0}}</view>人
+          </view>
+          <view class="tab-head">
+            <text class="left">姓名</text>
+            <text>手机号</text>
+          </view>
+          <view wx:if="{{workerNocardList.length>0}}">
+            <view class="tab-body dark" wx:for="{{workerNocardList}}" wx:key='index'>
+              <text class="left">{{item.name}}</text>
+              <text>{{item.phone}}</text>
+            </view>
+          </view>
+          <view wx:else class="tab-body dark">
+            <text class="left">--</text>
+            <text>--</text>
+          </view>
+        </van-collapse-item>
+      </van-collapse>
+    </view>
+  </van-tab>
+  <van-tab title="学生">
+    <view class="type-show">
+      <van-collapse wx:for="{{classTree}}" wx:key="index" value="{{ activeNames }}" custom-class="customClass"
+        bind:change="onChange1" class="student_coll">
+        <van-collapse-item title="{{item.name}}" name="{{index+1}}">
+          <view wx:if="item.children" wx:for="{{item.children}}" wx:key="index" class="childrenName"
+            bindtap="classNameClick" data-obj="{{item}}">{{item.name}}
+          </view>
+          <view slot='right-icon'>
+            <van-icon name="arrow" />
+          </view>
+        </van-collapse-item>
+      </van-collapse>
+    </view>
+  </van-tab>
+</van-tabs>
+
+<van-popup show="{{ showPopup }}" position="bottom" catchtouchmove="true">
+  <van-datetime-picker type="date" value="{{ currentDate }}" bind:confirm="confirmDate" bind:cancel="cancel" />
+</van-popup>

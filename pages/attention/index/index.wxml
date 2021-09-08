@@ -1,0 +1,23 @@
+<view class="layout-content">
+  <van-sticky>
+    <van-search value="{{ searchValue }}" field-class="search" input-class="van-input" placeholder="请输入姓名" shape="round"
+      bind:search="onSearch" bind:clear="onClear" bind:change="changeInput"/>
+  </van-sticky>
+  <view class="list-layout">
+    <view class="silder">
+    <van-sidebar width='120px' active-key="{{ activeKey }}" bind:change="onChange" custom-class="siderbar">
+      <van-sidebar-item title="{{item.hideName}}" wx:for="{{groupData}}" wx:key="index" />
+    </van-sidebar>
+  </view>
+    <view class="list" wx:if="{{personList.length}}">
+      <view class="list-item" wx:for="{{personList}}" wx:key="index" bindtap="toDetail" id="{{index}}">
+        <image src="{{item.faceUrl}}" id="{{index}}"></image>
+        <text class="textHidden" id="{{index}}">{{item.name||"--"}}</text>
+      </view>
+    </view>
+    <view wx:else class="empty">
+      <image src="/images/icon-empty.png"></image>
+      <view>暂无数据</view>
+    </view>
+  </view>
+</view>

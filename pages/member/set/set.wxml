@@ -1,0 +1,16 @@
+<view style="">
+  <view class="list">
+    <view class="avatar flex">
+      <text>头像</text>
+      <image mode="aspectFill" src="{{user.face}}" wx:if="{{user.face}}"  ></image>
+      <image src="/images/wd_mrtx@2x.png" wx:else ></image>
+      <!-- bindtap="chooseImg" -->
+    </view>
+  </view>
+  <van-cell custom-class="cell" title="姓名" value="{{user.name}}" size="large"/>
+  <navigator hover-class="none" url="/pages/member/newPhone/newPhone">
+    <van-cell title="联系电话" value="{{user.phone}}" size="large" is-link/>
+  </navigator>
+  <van-cell title="所属分组" value="{{user.workerGroupName}}" size="large"/>
+  <button class="btn" bindtap="loginOut">退出</button>
+</view>

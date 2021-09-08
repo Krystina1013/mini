@@ -1,0 +1,28 @@
+/* pages/home/index.wxss */
+.logo {
+  font-size: 38rpx;
+  text-align: center;
+  margin-top: 15%;
+  margin-bottom: 10%;
+}
+
+.logo image {
+  width: 322rpx;
+  height: 390rpx;
+  display: block;
+  margin: auto;
+}
+.wechat{
+  font-size:40rpx;
+  width:600rpx;
+  border-radius: 50rpx;
+  color:#fff;
+  background:#4BB082;
+}
+.login {
+  font-size: 28rpx;
+  background: transparent;
+  color:#333;
+  margin-top:20rpx;
+  width:300rpx;
+}

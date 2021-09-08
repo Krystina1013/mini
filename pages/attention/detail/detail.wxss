@@ -1,0 +1,19 @@
+page{
+  padding:0 48rpx;
+}
+.list{
+  font-size: 32rpx;
+  align-items: center;
+  justify-content: space-between;
+  padding:40rpx 0;
+  border-bottom: 2rpx solid rgba(0, 0, 0, 0.1);
+}
+.list image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.list view{
+  width: 60%;
+  text-align: right;
+}

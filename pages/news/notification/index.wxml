@@ -1,0 +1,23 @@
+<!--pages/news/notification/index.wxml-->
+<view class="loading" wx:if="{{loading}}">
+  <loading>加载中...</loading>
+</view>
+
+<view wx:if="{{dataList.length}}">
+  <view class="one-list" wx:for="{{dataList}}" wx:key='index' bindtap="toDetail" data-id='{{index}}'>
+    <view class="{{item.file!==''?'left':'left_long'}}">
+      <view class="new-title {{item.isRead==='1'?'read':''}}">{{item.title}}</view>
+      <view class="new-content {{item.isRead==='1'?'read':''}}">
+        <rich-text nodes="{{item.content}}" />
+      </view>
+      <view class="new-time {{item.isRead==='1'?'time-read':''}}">{{item.createTime}}</view>
+    </view>
+    <view class="{{item.file!==''?'right':'right_no'}}">
+      <image mode="aspectFit" class="new-image" src="{{item.file}}"></image>
+    </view>
+  </view>
+</view>
+<view wx:if="{{!dataList.length && !loading}}" class="empty">
+  <image src="/images/icon-empty.png"></image>
+  <view>暂无数据</view>
+</view>

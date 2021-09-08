@@ -1,0 +1,72 @@
+/* pages/realTimeMonito/list/index.wxss */
+.camera{
+  position: relative;
+}
+.bottom-content{
+  overflow-y: scroll;
+  padding: 0 30rpx;
+}
+.search-layout{
+  height: calc(100vh - 124rpx);
+  width: 100%;
+  display: grid;
+  grid-template-columns:1fr 1fr;
+  grid-template-rows: 268rpx 268rpx;
+  text-align:center;
+  grid-gap:30rpx 0rpx;
+}
+.search-layout image{
+  width: 210rpx;
+  height: 210rpx;
+  border-radius: 8rpx;
+}
+.imgs{
+  width: 124rpx;
+  height: 124rpx;
+  position: fixed;
+  right: 30rpx;
+  bottom: 110rpx;
+}
+.empty image{
+  width: 380rpx;
+  height: 356rpx;
+}
+.empty{
+  display: block;
+  margin:100rpx auto 0;
+  text-align: center;
+  color: #979797;
+  font-size: 28rpx;
+}
+.reset-btn{
+  text-align: center;
+  padding: 20rpx;
+  color:#4BB082;
+  border-top:2rpx solid rgba(0, 0, 0, .1);
+  /* background: rgba(75, 176, 130, .1); */
+}
+.textName{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  width: 210rpx;
+  display: inline-block;
+}
+.no-more{
+  display: block;
+  margin:0 auto 30rpx;
+  text-align: center;
+  color: #979797;
+  font-size: 28rpx;
+}
+.silder{
+  float: left;
+}
+.van-sidebar{
+  height: calc(100vh - 140rpx) !important;
+  overflow-y:scroll;
+}
+.van-sidebar-item--selected,.van-sidebar-item--selected{
+  border-color:#4BB082 !important;
+ color:#4BB082 !important;
+}

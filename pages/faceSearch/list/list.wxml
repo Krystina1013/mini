@@ -1,0 +1,14 @@
+<view class="layout" wx:if="{{listData.length}}">
+  <view class="list" wx:for="{{listData}}" wx:key="index" bindtap="toDetail" id="{{index}}">
+    <!-- <navigator hover-class="none" url="/pages/faceSearch/detail/detail"> -->
+      <image src="{{item.face}}" wx:if="{{item.face}}" id="{{index}}"></image>
+      <image wx:else src="/images/wd_mrtx@2x.png" id="{{index}}"></image>
+      <view class="textHidden" id="{{index}}">{{item.name}}</view>
+    <!-- </navigator> -->
+  </view>
+
+</view>
+<view wx:else class="empty">
+  <image src="/images/icon-empty.png"></image>
+  <view>暂无数据</view>
+</view>

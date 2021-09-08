@@ -1,0 +1,30 @@
+<!--pages/realTimeMonito/list/index.wxml-->
+<view class="camera">
+  <van-sticky>
+    <van-search value="{{ name }}" field-class="search" input-class="van-input" placeholder="搜索" shape="round"
+    bind:search="onSearch" bind:clear="onClear" bind:change="changeInput"/>
+  </van-sticky>
+  <view class="list-layout">
+  <view class="silder">
+    <van-sidebar width='120px' active-key="{{ activeKey }}" bind:change="onChange" custom-class="siderbar">
+      <van-sidebar-item title="{{item.hideName}}" wx:for="{{groupData}}" wx:key="index" />
+    </van-sidebar>
+  </view>
+  <view class="bottom-content">
+    <view class="search-layout" wx:if="{{searchData.length}}">
+      <view wx:for="{{searchData}}" wx:key="index" class="search-items">
+        <image src="{{item.panoramaUrl || '/images/video.png'}}" bindtap="toDetail" id="{{item.id}}" data-status="{{item.liveStatus}}" data-name="{{item.name}}" mode="aspectFill"></image>
+        <text class="textName">{{item.name}}</text>
+      </view>
+    </view>
+    <view wx:else class="empty">
+      <image src="/images/icon-empty.png"></image>
+      <view>暂无数据</view>
+    </view>
+    <view wx:if="{{ showMore}}" class="no-more">
+      <view>没有更多数据了</view>
+    </view>
+  </view>
+</view>
+
+</view>

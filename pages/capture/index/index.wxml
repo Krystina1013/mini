@@ -1,0 +1,104 @@
+<!-- <van-sticky class="top-con"> -->
+  <view class="top-content">
+    <view class="top-filter">
+      <view class="camera-filter-con">
+        <van-search value="{{ cameraNum }}" placeholder="请输入摄像机名称" bind:search="sure" bind:clear="onClear"
+        bind:change="changeInput" />
+      </view>
+      <view class="line-split"></view>
+      <view class="filter-con" bindtap='openFilterPopup'>
+        <image class="icon-filter" src="/images/filter.png"></image><text>筛选</text>
+      </view>
+    </view>
+   
+    <!-- <view class="top-layout">
+      <view class="flex top-month">
+        <text>日期</text>
+        <view class="flex align-items-center" bindtap="openPopup">
+          <image src="/images/nfy_zpt_rqicon@2x.png"></image>
+          <text class="date">{{currentYear}}年{{currentMonth - 1}}月</text>
+        </view>
+      </view>
+      <view class="bottom-date flex align-items-center">
+        <image src="/images/arrow@2x.png" class="arrow" bindtap="srcollToLeft"></image>
+        <view class="days-content">
+          <scroll-view scroll-x="{{true}}" class="scroll" scroll-left="{{scrollLeft}}"
+            scroll-with-animation="{{true}}" bindscroll="dragend">
+            <view wx:for="{{days}}" wx:key="index" class="scroll-item {{chooseDate==index+1?'active':''}}"
+              bindtap="handleChangeDate" id="{{index+1}}">
+              <view id="{{index+1}}">{{item}}</view>
+              <view id="{{index+1}}">{{index+1}}</view>
+            </view>
+          </scroll-view>
+        </view>
+        <image src="/images/arrow@2x.png" class="right arrow" bindtap="srcollToRight"></image>
+      </view>
+    </view>
+    <view class="time-box flex">
+      <text>选择时段</text>
+      <view class="flex icon" bindtap="openTimePop">
+        <image src="/images/time.png"></image>
+        <view>{{startTime}} ~ {{endTime}}</view>
+      </view>
+    </view>
+    <view class="reset-btn" bindtap="reset"><text>重置</text></view> -->
+  </view>
+<!-- </van-sticky> -->
+<view class="bottom-content" wx:if="{{searchData.length}}">
+  <view class="search-layout" >
+    <view wx:for="{{searchData}}" wx:key="index">
+      <image src="{{item.faceInfo.faceUrl}}" bindtap="toDetail" id="{{index}}" mode="aspectFill"></image>
+    </view>
+  </view>
+</view>
+<view wx:else class="empty">
+  <image src="/images/icon-empty.png"></image>
+  <view>暂无数据</view>
+</view>
+<!-- <view wx:if="{{ showMore}}" class="no-more">
+  <view>没有更多数据了</view>
+</view> -->
+<!-- </view> -->
+
+<navigator hover-class="none" url="/pages/capture/search/search">
+  <image src="/images/xfsc@2x.png" class="imgs"></image>
+</navigator>
+
+<van-popup show="{{ showPopup }}" position="bottom"  z-index="{{101}}">
+  <van-datetime-picker type="date" value="{{ currentDate }}" max-date="{{ maxDate }}" bind:confirm="confirmDate"
+    bind:cancel="cancel" />
+</van-popup>
+
+<van-popup show="{{ showTimePopup }}" position="bottom" custom-style="height: 50%"  z-index="{{101}}">
+  <van-picker columns="{{ timePopupData }}" default-index="{{ [0,23] }}" bind:confirm="changeTime"  bind:cancel="cancel" show-toolbar />
+</van-popup>
+<van-popup custom-style="top: 100rpx" show="{{ showFilterPopup }}" position="top" safe-area-inset-top='true'  close-on-click-overlay="{{true}}" bind:close="onFilterClose">
+  <view class="filter-pop-con">
+    <view class="type-con flex">
+      <text  class="filter-title">分组</text>
+      <van-dropdown-menu  class="type-menu filter-right" active-color="#4BB082">
+        <van-dropdown-item id="dropItem" value="{{ cameraGroupId }}" bind:change='typeChange' options="{{ typeOptions }}" />
+      </van-dropdown-menu>
+    </view>
+    <view class="flex top-month">
+        <text class="filter-title">日期</text>
+        <view class="flex align-items-center filter-right" bindtap="openPopup">
+          <image src="/images/nfy_zpt_rqicon@2x.png"></image>
+          <text class="date" wx:if='{{currentYear}}'>{{currentYear}}年{{currentMonth}}月{{chooseDate}}日</text>
+          <text class="date" wx:if='{{!currentYear}}'>选择筛选日期</text>
+        </view>
+      </view>
+      <view class="time-box flex">
+      <text  class="filter-title">选择时段</text>
+      <view class="flex icon align-items-center filter-right" bindtap="openTimePop">
+        <image src="/images/time.png"></image>
+        <view>{{startTime}} ~ {{endTime}}</view>
+      </view>
+    </view>
+    <view class="flex bottom-btn">
+      <view bindtap="reset" class="reset-btn"><text>重置</text> </view>
+      <view class="line"></view>
+      <view bindtap="sure" class="reset-btn"><text>确认</text> </view>
+    </view>
+  </view>
+</van-popup>

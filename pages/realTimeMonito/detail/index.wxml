@@ -1,0 +1,8 @@
+<!--pages/realTimeMonito/detail/index.wxml-->
+<view class="time-box flex">
+  <text class="textName">摄像头：</text>
+  <text>{{name}}</text>
+</view>
+<view class="video">
+  <video id="myVideo" show-play-btn='{{false}}'  binderror='{{errorEvent}}'  bindtimeupdate="{{timeUpdate}}" autoplay='true' src="{{videoUrl}}"></video>
+</view>

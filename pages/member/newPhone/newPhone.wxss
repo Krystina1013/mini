@@ -1,0 +1,27 @@
+page{
+  padding: 30rpx 48rpx;
+}
+.phone{
+  font-size: 40rpx;
+}
+.phone text{
+  color: #4BB082;
+}
+.list{
+  margin-top: 62rpx;
+  padding: 40rpx 0;
+  border-bottom: 2rpx  solid rgba(0, 0, 0, .1);
+}
+.list text{
+  display: inline-block;
+  margin-right: 40rpx;
+}
+.btn{
+  width: 654rpx;
+  height: 104rpx;
+  background: #4BB082;
+  border-radius: 52rpx;
+  color: #fff;
+  line-height:104rpx;
+  margin-top: 200rpx;
+}

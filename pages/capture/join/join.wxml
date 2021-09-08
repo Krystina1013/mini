@@ -1,0 +1,21 @@
+<view class="list-pad">
+  <view class="avatar flex">
+    <text>头像</text>
+    <image src="{{faceUrl}}"></image>
+  </view>
+</view>
+<van-field value="{{ name }}" label="姓名" placeholder="请输入姓名" size="large" bind:change="onChangeName"/>
+<view class="list-pad">
+  <view class="avatar flex group">
+    <text>请选择分组</text>
+    <view class="choose textHidden" bindtap="openAction">{{groupName}}</view>
+    <image src="/images/arrow@2x.png"  bindtap="openAction"></image>
+  </view>
+</view>
+<van-field value="{{ remark }}" label="备注" type="textarea" maxlength='200' placeholder="请输入备注" autosize size="large" bind:change="onChangeRemark"/>
+
+<van-popup show="{{ showGroup }}" bind:close="onClose" position='bottom'>
+	<van-picker columns="{{ columns }}" bind:confirm='confirm' bind:cancel="onClose" show-toolbar/>
+</van-popup>
+
+<button class="save-btn" bindtap="submit">保存</button>

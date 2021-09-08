@@ -1,0 +1,107 @@
+/* pages/checkIn/index.wxss */
+
+page {
+  background-color: #f4f4f4;
+}
+
+.van-tabs__line {
+  background-color: #6DCB9F !important;
+  bottom: 8px !important;
+}
+
+.van-tab--active {
+  color: #6DCB9F !important;
+}
+
+.item-text {
+  display: flex;
+  float: right;
+}
+
+.item-text .normal {
+  color: #4EB087;
+}
+
+.item-text .warning {
+  color: #FF5A5A;
+}
+
+.van-tabs__wrap .van-tabs__scroll {
+  background-color: #f4f4f4;
+  font-weight: 700;
+  font-size: 30rpx;
+}
+
+.type-tabs .van-tabs__line {
+  background-color: #6DCB9F;
+  bottom: 15rpx;
+}
+
+.type-tabs .van-tab {
+  font-size: 30rpx;
+  font-weight: 400;
+}
+
+.type-tabs .van-tab--active {
+  color: #6DCB9F;
+  font-weight: 700;
+}
+
+.type-show {
+  margin: 10rpx 20rpx;
+}
+
+.type-show .van-cell {
+  padding: 10px 20rpx !important;
+  background-color: #fff;
+  margin-top: 10rpx;
+  border-radius: 10rpx;
+}
+
+.type-show .tab-head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.type-show text {
+  background-color: #e8e8e8;
+  text-align: center;
+  width: 50%;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #666666;
+  border-bottom: 1px solid #fff;
+}
+
+.type-show .left {
+  border-right: 1px solid #fff;
+}
+
+.type-show .van-collapse-item__content {
+  padding: 10rpx;
+  border-radius: 10rpx;
+}
+
+.type-show .tab-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.type-show .dark text {
+  background-color: rgba(95, 171, 135, 0.10);
+  color: #333333;
+}
+
+.student_coll .van-collapse-item__content {
+  padding: 0 20px;
+}
+
+.childrenName {
+  height: 86rpx;
+  line-height: 86rpx;
+  border-bottom: 2rpx solid #f4f4f4;
+}
+
+.childrenName:last-child {
+  border-bottom: none;
+}

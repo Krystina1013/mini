@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "实时监控",
+  "usingComponents": {
+    "van-search": "@vant/weapp/search/index",
+    "van-sticky": "@vant/weapp/sticky/index",
+    "van-sidebar": "@vant/weapp/sidebar/index",
+    "van-sidebar-item": "@vant/weapp/sidebar-item/index"
+  }
+}
